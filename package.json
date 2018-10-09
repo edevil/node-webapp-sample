@@ -7,7 +7,8 @@
   "scripts": {
     "typeorm": "ts-node ./node_modules/.bin/typeorm",
     "start": "nodemon",
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc -p tsconfig.build.json"
   },
   "engines": {
     "node": ">=10.11.0",
@@ -74,20 +75,5 @@
     "extends": [
       "plugin:prettier/recommended"
     ]
-  },
-  "jest": {
-    "rootDir": ".",
-    "preset": "ts-jest",
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.json"
-      }
-    },
-    "testMatch": [
-      "**/__tests__/*.+(ts|tsx|js)"
-    ],
-    "moduleNameMapper": {
-      "@app/(.*)": "<rootDir>/src/$1"
-    }
   }
 }
