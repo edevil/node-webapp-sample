@@ -10,7 +10,6 @@ import { userProfileResolver } from "../graphql/resolvers/user-profile";
 import { initORM } from "../initializers/database";
 import { shutdownSubscriptions } from "../initializers/graphql";
 import { closeRedis, initRedis } from "../initializers/redis";
-import { logger } from "../logger";
 import { Card } from "../models/card";
 import { User } from "../models/user";
 import { router } from "../routes";
