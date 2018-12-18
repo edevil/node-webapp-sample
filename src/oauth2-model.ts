@@ -49,7 +49,7 @@ const model: OAuth2Server.AuthorizationCodeModel & OAuth2Server.RefreshTokenMode
     refreshToken.client = client as OAuthClient;
     refreshToken.user = user as User;
 
-    await transaction(OAuthAccessToken.knex, async trx => {
+    await transaction(OAuthAccessToken.knex(), async trx => {
       await OAuthAccessToken.query(trx).insert(accessToken);
       await OAuthRefreshToken.query(trx).insert(refreshToken);
     });
