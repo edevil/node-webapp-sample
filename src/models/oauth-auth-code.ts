@@ -25,7 +25,9 @@ export class OAuthAuthorizationCode extends Model {
     },
   };
 
+  public userId: number;
   public user: User;
+  public clientId: string;
   public client: OAuthClient;
 
   public authorizationCode: string;

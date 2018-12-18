@@ -39,15 +39,15 @@ const model: OAuth2Server.AuthorizationCodeModel & OAuth2Server.RefreshTokenMode
     accessToken.accessToken = token.accessToken;
     accessToken.accessTokenExpiresAt = token.accessTokenExpiresAt;
     accessToken.scope = token.scope as string;
-    accessToken.client = client as OAuthClient;
-    accessToken.user = user as User;
+    accessToken.clientId = client.id;
+    accessToken.userId = user.id;
 
     const refreshToken = new OAuthRefreshToken();
     refreshToken.refreshToken = token.refreshToken;
     refreshToken.refreshTokenExpiresAt = token.refreshTokenExpiresAt;
     refreshToken.scope = token.scope as string;
-    refreshToken.client = client as OAuthClient;
-    refreshToken.user = user as User;
+    refreshToken.clientId = client.id;
+    refreshToken.userId = user.id;
 
     await transaction(OAuthAccessToken.knex(), async trx => {
       await OAuthAccessToken.query(trx).insert(accessToken);
@@ -70,39 +70,39 @@ const model: OAuth2Server.AuthorizationCodeModel & OAuth2Server.RefreshTokenMode
     authCode.expiresAt = code.expiresAt;
     authCode.redirectUri = code.redirectUri;
     authCode.scope = code.scope as string;
-    authCode.client = client as OAuthClient;
-    authCode.user = user as User;
+    authCode.clientId = client.id;
+    authCode.userId = user.id;
 
     return OAuthAuthorizationCode.query().insert(authCode);
   },
   async getAuthorizationCode(authorizationCode) {
     return OAuthAuthorizationCode.query()
       .eagerAlgorithm(OAuthAuthorizationCode.JoinEagerAlgorithm)
-      .eager(["user", "client"])
+      .eager("[user, client]")
       .findOne("authorizationCode", authorizationCode);
   },
   async revokeToken(token) {
     const deleted = await OAuthRefreshToken.query()
       .delete()
-      .where("refreshToken", token);
+      .where("refreshToken", token.refreshToken);
     return deleted === 1;
   },
   async revokeAuthorizationCode(code) {
     const deleted = await OAuthAuthorizationCode.query()
       .delete()
-      .where("authorizationCode", code);
+      .where("authorizationCode", code.authorizationCode);
     return deleted === 1;
   },
   async getAccessToken(accessToken) {
     return OAuthAccessToken.query()
       .eagerAlgorithm(OAuthAccessToken.JoinEagerAlgorithm)
-      .eager(["user", "client"])
+      .eager("[user, client]")
       .findOne("accessToken", accessToken);
   },
   async getRefreshToken(refreshToken) {
     return OAuthRefreshToken.query()
       .eagerAlgorithm(OAuthRefreshToken.JoinEagerAlgorithm)
-      .eager(["user", "client"])
+      .eager("[user, client]")
       .findOne("refreshToken", refreshToken);
   },
 };

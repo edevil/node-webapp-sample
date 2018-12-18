@@ -25,7 +25,9 @@ export class OAuthAccessToken extends Model {
     },
   };
 
+  public userId: number;
   public user: User;
+  public clientId: string;
   public client: OAuthClient;
 
   public accessToken: string;
