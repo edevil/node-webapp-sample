@@ -14,7 +14,7 @@ WORKDIR /app
 RUN npm run build
 
 
-FROM node:10.13-alpine AS release
+FROM node:10.14-alpine AS release
 
 WORKDIR /app
 COPY package*.json ./
