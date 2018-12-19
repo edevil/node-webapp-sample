@@ -22,7 +22,7 @@
   "dependencies": {
     "@emartech/cls-adapter": "^1.2.0",
     "@godaddy/terminus": "^4.1.0",
-    "@koa/cors": "^2.2.2",
+    "@koa/cors": "^2.2.3",
     "@sentry/node": "^4.4.2",
     "apollo-server-koa": "^2.3.1",
     "app-root-path": "^2.1.0",
