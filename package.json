@@ -29,7 +29,7 @@
     "async-busboy": "^0.7.0",
     "bcryptjs": "^2.4.3",
     "bytes": "^3.0.0",
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "class-transformer": "^0.2.0",
     "class-validator": "^0.9.1",
     "csrf": "^3.0.6",
