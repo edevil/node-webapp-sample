@@ -65,7 +65,7 @@
     "socket.io-redis": "^5.2.0",
     "typeorm": "^0.2.12",
     "uuid": "^3.3.2",
-    "winston": "^3.2.0"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@types/graphql": "^14.0.5",
