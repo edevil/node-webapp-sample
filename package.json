@@ -39,7 +39,7 @@
     "graphql-input-number": "0.0.10",
     "graphql-redis-subscriptions": "^2.0.0",
     "ioredis": "^4.6.2",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^8.5.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-compose": "^4.1.0",
