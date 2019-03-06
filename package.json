@@ -37,7 +37,7 @@
     "graphql": "^14.1.1",
     "graphql-depth-limit": "^1.1.0",
     "graphql-input-number": "0.0.10",
-    "graphql-redis-subscriptions": "^2.0.0",
+    "graphql-redis-subscriptions": "^2.1.0",
     "ioredis": "^4.6.2",
     "jsonwebtoken": "^8.5.0",
     "koa": "^2.7.0",
