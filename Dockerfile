@@ -16,6 +16,7 @@ RUN npm run build
 
 FROM node:10.15-alpine AS release
 
+RUN apk add --no-cache git
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --only=production
