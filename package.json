@@ -68,7 +68,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@types/graphql": "^14.2.0",
+    "@types/graphql": "^14.2.1",
     "@types/ioredis": "^4.0.12",
     "@types/jest": "^24.0.14",
     "@types/jsonwebtoken": "^8.3.2",
