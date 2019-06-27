@@ -1,5 +1,6 @@
 {
-  "extends": [":separateMajorReleases", ":preserveSemverRanges", "schedule:weekdays"],
+  "extends": [":separateMajorReleases", ":preserveSemverRanges"],
+  "schedule": "before 3am every weekday",
   "rangeStrategy": "bump",
   "automerge": true,
   "major": {
