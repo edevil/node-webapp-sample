@@ -70,7 +70,7 @@
   "devDependencies": {
     "@types/graphql": "^14.2.3",
     "@types/ioredis": "^4.0.13",
-    "@types/jest": "^24.0.15",
+    "@types/jest": "^24.0.16",
     "@types/jsonwebtoken": "^8.3.2",
     "@types/koa-passport": "^4.0.2",
     "@types/koa-session": "^5.10.1",
