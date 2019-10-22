@@ -39,7 +39,7 @@ afterAll(async () => {
 
 beforeEach(async () => {
   await conn.dropDatabase();
-  await conn.runMigrations({ transaction: true });
+  await conn.runMigrations({ transaction: "all" });
 });
 
 describe("GET / - simple test", () => {
