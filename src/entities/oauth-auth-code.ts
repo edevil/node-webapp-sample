@@ -16,14 +16,22 @@ export class OAuthAuthorizationCode {
   @Column("text")
   public scope: string;
 
-  @ManyToOne(type => User, user => user.oauthAuthorizationCodes, {
-    onDelete: "CASCADE",
-  })
+  @ManyToOne(
+    type => User,
+    user => user.oauthAuthorizationCodes,
+    {
+      onDelete: "CASCADE",
+    },
+  )
   public user: User;
 
-  @ManyToOne(type => OAuthClient, client => client.oauthAuthorizationCodes, {
-    onDelete: "CASCADE",
-  })
+  @ManyToOne(
+    type => OAuthClient,
+    client => client.oauthAuthorizationCodes,
+    {
+      onDelete: "CASCADE",
+    },
+  )
   public client: OAuthClient;
 
   @CreateDateColumn()

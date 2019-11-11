@@ -20,18 +20,31 @@ export class OAuthClient {
   @Column("text")
   public secret: string;
 
-  @ManyToOne(type => User, user => user.oauthClients, {
-    onDelete: "CASCADE",
-  })
+  @ManyToOne(
+    type => User,
+    user => user.oauthClients,
+    {
+      onDelete: "CASCADE",
+    },
+  )
   public user: User;
 
-  @OneToMany(type => OAuthAccessToken, token => token.user)
+  @OneToMany(
+    type => OAuthAccessToken,
+    token => token.user,
+  )
   public oauthAccessTokens: OAuthAccessToken[];
 
-  @OneToMany(type => OAuthRefreshToken, token => token.user)
+  @OneToMany(
+    type => OAuthRefreshToken,
+    token => token.user,
+  )
   public oauthRefreshTokens: OAuthRefreshToken[];
 
-  @OneToMany(type => OAuthAuthorizationCode, code => code.user)
+  @OneToMany(
+    type => OAuthAuthorizationCode,
+    code => code.user,
+  )
   public oauthAuthorizationCodes: OAuthAuthorizationCode[];
 
   @Column("text", {
