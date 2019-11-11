@@ -1,5 +1,5 @@
 import { getContextStorage } from "@emartech/cls-adapter";
-import chalk from "chalk";
+import chalk = require("chalk");
 import * as winston from "winston";
 
 const addContextFormat = winston.format((info, opts) => {
