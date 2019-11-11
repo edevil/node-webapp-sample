@@ -7,14 +7,22 @@ export class OAuthRefreshToken {
   @PrimaryColumn()
   public refreshToken: string;
 
-  @ManyToOne(type => User, user => user.oauthRefreshTokens, {
-    onDelete: "CASCADE",
-  })
+  @ManyToOne(
+    type => User,
+    user => user.oauthRefreshTokens,
+    {
+      onDelete: "CASCADE",
+    },
+  )
   public user: User;
 
-  @ManyToOne(type => OAuthClient, client => client.oauthRefreshTokens, {
-    onDelete: "CASCADE",
-  })
+  @ManyToOne(
+    type => OAuthClient,
+    client => client.oauthRefreshTokens,
+    {
+      onDelete: "CASCADE",
+    },
+  )
   public client: OAuthClient;
 
   @Column("text")

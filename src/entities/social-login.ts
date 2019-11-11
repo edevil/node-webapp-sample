@@ -14,10 +14,14 @@ export class SocialLogin {
   })
   public type: SocialType;
 
-  @ManyToOne(type => User, user => user.socialLogins, {
-    onDelete: "CASCADE",
-    primary: true,
-  })
+  @ManyToOne(
+    type => User,
+    user => user.socialLogins,
+    {
+      onDelete: "CASCADE",
+      primary: true,
+    },
+  )
   public user: User;
 
   @CreateDateColumn()
