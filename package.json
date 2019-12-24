@@ -63,7 +63,7 @@
     "reflect-metadata": "^0.1.13",
     "socket.io": "^2.3.0",
     "socket.io-redis": "^5.2.0",
-    "typeorm": "^0.2.21",
+    "typeorm": "^0.2.22",
     "uuid": "^3.3.3",
     "winston": "^3.2.1"
   },
