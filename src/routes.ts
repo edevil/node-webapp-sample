@@ -68,7 +68,7 @@ router.get("oauth-authorize", "/oauth/authorize", CSRFMW, redLoginReqMW, async (
 
   const allowedQParams = new Set(["scope", "redirect_uri", "response_type", "client_id", "access_type"]);
   const filteredEntries = Object.entries(ctx.request.query).filter(([key, val]) => allowedQParams.has(key));
-  const paramMap = new Map(filteredEntries as Array<[string, string | string[]]>);
+  const paramMap = new Map(filteredEntries as [string, string | string[]][]);
   const authorizeUrl = addParamsToURL(router.url("oauth-authorize-post"), paramMap);
 
   await ctx.render("oauth-authorize", {
