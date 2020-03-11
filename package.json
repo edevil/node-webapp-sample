@@ -76,7 +76,7 @@
     "@types/koa-session": "^5.10.2",
     "@types/node": "^13.9.0",
     "@types/oauth2-server": "^3.0.12",
-    "@types/passport": "^1.0.2",
+    "@types/passport": "^1.0.3",
     "@types/passport-local": "^1.0.33",
     "@types/socket.io": "^2.1.4",
     "@types/socket.io-redis": "^1.0.25",
