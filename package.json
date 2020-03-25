@@ -41,7 +41,7 @@
     "ioredis": "^4.16.0",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
-    "koa-bodyparser": "^4.2.1",
+    "koa-bodyparser": "^4.3.0",
     "koa-compose": "^4.1.0",
     "koa-csrf": "^3.0.8",
     "koa-helmet": "^5.2.0",
