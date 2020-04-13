@@ -38,7 +38,7 @@
     "graphql-depth-limit": "^1.1.0",
     "graphql-input-number": "0.0.10",
     "graphql-redis-subscriptions": "^2.2.1",
-    "ioredis": "^4.16.1",
+    "ioredis": "^4.16.2",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.3.0",
