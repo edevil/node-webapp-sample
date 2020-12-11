@@ -15,7 +15,7 @@ export const createCardMutation = {
     await repository.insert(card);
     pubsub
       .publish(CARD_ADDED, { cardAdded: card })
-      .catch(err => logger.error("Could not publish new card message", { err }));
+      .catch((err) => logger.error("Could not publish new card message", { err }));
     return card;
   },
 };

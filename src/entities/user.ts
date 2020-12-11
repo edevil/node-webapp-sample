@@ -32,33 +32,18 @@ export class User {
   })
   public email: string;
 
-  @OneToMany(
-    type => SocialLogin,
-    login => login.user,
-  )
+  @OneToMany((type) => SocialLogin, (login) => login.user)
   public socialLogins: SocialLogin[];
 
-  @OneToMany(
-    type => OAuthClient,
-    client => client.user,
-  )
+  @OneToMany((type) => OAuthClient, (client) => client.user)
   public oauthClients: OAuthClient[];
 
-  @OneToMany(
-    type => OAuthAccessToken,
-    token => token.user,
-  )
+  @OneToMany((type) => OAuthAccessToken, (token) => token.user)
   public oauthAccessTokens: OAuthAccessToken[];
 
-  @OneToMany(
-    type => OAuthRefreshToken,
-    token => token.user,
-  )
+  @OneToMany((type) => OAuthRefreshToken, (token) => token.user)
   public oauthRefreshTokens: OAuthRefreshToken[];
 
-  @OneToMany(
-    type => OAuthAuthorizationCode,
-    code => code.user,
-  )
+  @OneToMany((type) => OAuthAuthorizationCode, (code) => code.user)
   public oauthAuthorizationCodes: OAuthAuthorizationCode[];
 }

@@ -13,16 +13,16 @@ export const initWebsocket = (server, app) => {
     subClient: getNewRedis(),
   });
   // @ts-ignore
-  adapter.prototype.on("error", err => logger.error("Socket redis adapter encountered an error", { err }));
+  adapter.prototype.on("error", (err) => logger.error("Socket redis adapter encountered an error", { err }));
 
   io = socketio(server, {
     adapter,
   });
 
-  io.on("connection", socket => {
+  io.on("connection", (socket) => {
     logger.debug(`A client has connected`, { socketid: socket.id });
     socket.on("disconnect", () => logger.debug("A user has disconnected"));
-    socket.on("chat message", msg => {
+    socket.on("chat message", (msg) => {
       logger.debug(`Message: ${msg}`, { userId: socket.request.userId });
       io.emit("chat message", msg);
     });

@@ -10,7 +10,7 @@ export const exampleMutations = {
     const myFile = fs.createWriteStream("output");
     const promise = new Promise((resolve, reject) => {
       stream
-        .on("error", err => {
+        .on("error", (err) => {
           logger.info("Could not read file", { err });
           myFile.close();
           reject(err);

@@ -20,6 +20,6 @@ export const loginRLMW = ratelimit({
     reset: "Rate-Limit-Reset",
     total: "Rate-Limit-Total",
   },
-  id: ctx => ctx.ip,
+  id: (ctx) => ctx.ip,
   max: 10,
 });

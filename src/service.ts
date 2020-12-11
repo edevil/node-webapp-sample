@@ -22,7 +22,7 @@ export async function createUserFromGoogle(createReq: CreateGoogleUser, manager:
   socialLogin.clientId = createReq.username;
   socialLogin.type = SocialType.Google;
   socialLogin.user = user;
-  await manager.transaction(async transactionalEntityManager => {
+  await manager.transaction(async (transactionalEntityManager) => {
     await transactionalEntityManager.insert(User, user);
     await transactionalEntityManager.insert(SocialLogin, socialLogin);
   });

@@ -15,10 +15,10 @@ const model: OAuth2Server.AuthorizationCodeModel & OAuth2Server.RefreshTokenMode
     }
     const requestedScopes = (scope as string).split(" ");
     const authorizedScopes = (token.scope as string).split(" ");
-    return requestedScopes.every(s => authorizedScopes.includes(s));
+    return requestedScopes.every((s) => authorizedScopes.includes(s));
   },
   async validateScope(user, client, scope) {
-    if (!(scope as string).split(" ").every(s => client.scopes.includes(s))) {
+    if (!(scope as string).split(" ").every((s) => client.scopes.includes(s))) {
       return false;
     }
     return scope;
@@ -50,7 +50,7 @@ const model: OAuth2Server.AuthorizationCodeModel & OAuth2Server.RefreshTokenMode
     refreshToken.client = client as OAuthClient;
     refreshToken.user = user as User;
 
-    await getConnection().manager.transaction(async transactionalEntityManager => {
+    await getConnection().manager.transaction(async (transactionalEntityManager) => {
       await transactionalEntityManager.save(accessToken);
       await transactionalEntityManager.save(refreshToken);
     });
