@@ -19,22 +19,12 @@ export const app = new Koa();
 app.keys = config.appKeys;
 app.proxy = config.trustXHeaders;
 
-app
-  .use(getKoaMiddleware())
-  .use(getBinderMW())
-  .use(requestLoggerMW)
-  .use(helmet())
-  .use(getCORSMW())
-  .use(session(app));
+app.use(getKoaMiddleware()).use(getBinderMW()).use(requestLoggerMW).use(helmet()).use(getCORSMW()).use(session(app));
 
 locale(app);
 i18nInitializer(app);
 
-app
-  .use(getAuthMW())
-  .use(getTemplateEngine())
-  .use(router.routes())
-  .use(router.allowedMethods());
+app.use(getAuthMW()).use(getTemplateEngine()).use(router.routes()).use(router.allowedMethods());
 
 graphqlInitializer(app);
 

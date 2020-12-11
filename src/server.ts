@@ -35,7 +35,7 @@ function healthCheck() {
 
 function beforeShutdown() {
   logger.debug("Will setup shutdown timer");
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, 5000);
   });
 }
@@ -65,8 +65,8 @@ const bootstrap = async () => {
   graphqlInstall(server);
 
   app.on("error", (err, ctx) => {
-    Sentry.withScope(scope => {
-      scope.addEventProcessor(async event => {
+    Sentry.withScope((scope) => {
+      scope.addEventProcessor(async (event) => {
         Sentry.Handlers.parseRequest(event, ctx.request);
         event.extra.request_id = ctx.state.requestId;
         return event;
@@ -78,7 +78,7 @@ const bootstrap = async () => {
   server.listen(config.port);
 };
 
-bootstrap().catch(err => {
+bootstrap().catch((err) => {
   logger.error("Error on server", {
     exception_message: err.message,
     exception_stack: err.stack,

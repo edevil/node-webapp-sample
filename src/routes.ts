@@ -259,7 +259,7 @@ router.post("upload-test", "/upload", async (ctx, next) => {
     const myFile = fs.createWriteStream("output");
     const promise = new Promise((resolve, reject) => {
       files[0]
-        .on("error", err => {
+        .on("error", (err) => {
           logger.info("Could not read file", { err });
           myFile.close();
           reject(err);

@@ -23,13 +23,13 @@ function getLevelFunc(level: string) {
   }
 }
 
-const myFormat = winston.format.printf(info => {
+const myFormat = winston.format.printf((info) => {
   const message = `${chalk.blueBright(info.timestamp)} ${getLevelFunc(info.level)(info.level)}: ${chalk.whiteBright(
     info.message.trim(),
   )}`;
   const extra = Object.keys(info)
-    .filter(kname => !["message", "level", "timestamp", "httpRequest"].includes(kname))
-    .map(kname => `[${chalk.magentaBright(kname)}: ${chalk.cyanBright(info[kname])}]`)
+    .filter((kname) => !["message", "level", "timestamp", "httpRequest"].includes(kname))
+    .map((kname) => `[${chalk.magentaBright(kname)}: ${chalk.cyanBright(info[kname])}]`)
     .join(" ");
   return `${message} ${extra}`;
 });

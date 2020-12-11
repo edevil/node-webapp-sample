@@ -23,6 +23,6 @@ export function getNewRedis(retries: boolean = true): Redis.Redis {
     keyPrefix: config.redisPrefix,
     maxRetriesPerRequest: retries ? null : 3,
   });
-  newConn.on("error", err => logger.error("Problems using redis", { err }));
+  newConn.on("error", (err) => logger.error("Problems using redis", { err }));
   return newConn;
 }

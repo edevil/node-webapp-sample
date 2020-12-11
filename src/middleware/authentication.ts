@@ -22,7 +22,7 @@ passport.deserializeUser((id: number, done) => {
   const repository = getRepository(User);
   repository
     .findOne({ id })
-    .then(user => {
+    .then((user) => {
       if (!user) {
         logger.warn("User not found", { user_id: id });
         done(null, false);
@@ -30,7 +30,7 @@ passport.deserializeUser((id: number, done) => {
         done(null, user);
       }
     })
-    .catch(err => done(err, null));
+    .catch((err) => done(err, null));
 });
 
 passport.use(
@@ -58,7 +58,7 @@ passport.use(
         createReq.username = googleID;
         createReq.name = profile.displayName;
         createReq.photoUrl = profile.photos[0].value;
-        createReq.email = profile.emails.filter(e => e.type === "account")[0].value;
+        createReq.email = profile.emails.filter((e) => e.type === "account")[0].value;
         logger.debug("google strategy", { createReq });
 
         let user;
