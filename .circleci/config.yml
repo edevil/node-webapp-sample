@@ -1,0 +1,41 @@
+
+version: 2
+jobs:
+  build:
+    working_directory: ~/node-webapp-sample
+    docker:
+      - image: circleci/node:14
+      - image: circleci/postgres:9.6-alpine-ram
+        environment: # Specifies the POSTGRES_USER authentication
+          POSTGRES_DB: sample_db_test
+      - image: circleci/redis:3
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@6'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: pretty
+          command: npm run pretty
+      - run:
+          name: lint
+          command: npm run lint
+      - run:
+          name: Install JUnit coverage reporter
+          command: npm install jest-junit
+      - run:
+          name: test
+          command: npm test -- --ci --runInBand --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: "js-test-results.xml"
+      - store_test_results:
+          path: js-test-results.xml
