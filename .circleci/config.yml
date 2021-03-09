@@ -7,7 +7,7 @@ jobs:
       - image: circleci/node:14
       - image: circleci/postgres:9.6-alpine-ram
         environment: # Specifies the POSTGRES_USER authentication
-          POSTGRES_DB: sample_db_citest
+          POSTGRES_DB: sample_db_test
       - image: circleci/redis:3
     steps:
       - checkout
