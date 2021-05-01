@@ -1,0 +1,43 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "04:00"
+  open-pull-requests-limit: 10
+  assignees:
+  - edevil
+  ignore:
+  - dependency-name: koa-views
+    versions:
+    - 7.0.0
+  - dependency-name: "@sentry/node"
+    versions:
+    - 5.29.2
+    - 6.0.3
+    - 6.2.0
+  - dependency-name: apollo-server-koa
+    versions:
+    - 2.19.1
+    - 2.19.2
+    - 2.21.0
+  - dependency-name: "@types/ioredis"
+    versions:
+    - 4.17.10
+    - 4.19.3
+  - dependency-name: "@godaddy/terminus"
+    versions:
+    - 4.5.0
+  - dependency-name: ioredis
+    versions:
+    - 4.19.4
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.19
+  - dependency-name: "@types/socket.io"
+    versions:
+    - 2.1.12
+  - dependency-name: "@types/passport"
+    versions:
+    - 1.0.5
