@@ -31,7 +31,7 @@
     "bytes": "^3.1.0",
     "chalk": "^4.1.0",
     "class-transformer": "^0.4.0",
-    "class-validator": "^0.12.2",
+    "class-validator": "^0.13.1",
     "csrf": "^3.1.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
