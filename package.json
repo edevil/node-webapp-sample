@@ -26,7 +26,7 @@
     "@sentry/node": "^6.2.1",
     "apollo-server-koa": "^2.21.1",
     "app-root-path": "^3.0.0",
-    "async-busboy": "^1.0.1",
+    "async-busboy": "^1.1.0",
     "bcryptjs": "^2.4.3",
     "bytes": "^3.1.0",
     "chalk": "^4.1.0",
