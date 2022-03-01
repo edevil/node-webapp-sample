@@ -69,7 +69,7 @@
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
-    "@types/ioredis": "^4.22.0",
+    "@types/ioredis": "^4.28.8",
     "@types/jest": "^26.0.20",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/koa-passport": "^4.0.2",
